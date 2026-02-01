@@ -1,8 +1,8 @@
-SELECT
+select
   product_id,
   product_category_name,
   total_sales_value,
   total_orders
-FROM main.product_performance_mart
-ORDER BY total_sales_value DESC
-LIMIT 10;
+from {{ ref('product_performance_mart') }}
+order by total_sales_value desc
+limit 10;
