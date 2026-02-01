@@ -2,7 +2,7 @@
 
 # Brazilian E-Commerce Analytics with dbt & DuckDB
 
-## 📊 [Open the Interactive Dashboard](visualizations/outputs/index.html)
+## 📊 [Open the Interactive Dashboard](https://pavan-r-m.github.io/Olist-Brazilian-E-Commerce-Analytics-Platform/)
 
 This project analyzes the Olist Brazilian E-Commerce Public Dataset using dbt and DuckDB. It demonstrates modern analytics engineering best practices, from raw data ingestion to insightful business analysis.
 
