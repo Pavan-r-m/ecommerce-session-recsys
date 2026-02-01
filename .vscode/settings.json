@@ -1,0 +1,11 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "database": "${workspaceFolder:ecommerce_analytics}/dev.duckdb",
+            "name": "Ecommerce Analytics"
+        }
+    ]
+}
