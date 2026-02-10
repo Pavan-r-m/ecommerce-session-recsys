@@ -1,0 +1,21 @@
+# Tell GitHub Linguist to ignore HTML documentation files
+docs/** linguist-documentation
+*.html linguist-documentation
+
+# Mark generated/vendored files
+target/** linguist-generated
+dbt_packages/** linguist-vendored
+
+# Ensure Python is detected as primary language
+*.py linguist-detectable=true
+*.sql linguist-detectable=true
+
+# Mark configuration files
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.toml linguist-language=TOML
+*.json linguist-language=JSON
+
+# Docker files
+Dockerfile linguist-language=Dockerfile
+docker-compose.yml linguist-language=YAML
