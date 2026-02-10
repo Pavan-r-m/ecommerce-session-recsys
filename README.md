@@ -8,6 +8,10 @@ A production-ready, real-time product recommendation system leveraging session-b
 
 E-commerce platforms need real-time product recommendations that adapt to user behavior within a single session. This system solves the cold-start problem for new users by analyzing session context (recent views, clicks, cart additions) rather than relying solely on historical user profiles.
 
+Traditional recommender systems often struggle with new users who have no purchase history, leading to generic, poorly-targeted recommendations that fail to drive engagement. This project addresses that challenge by building a sophisticated session-based recommendation engine that can generate personalized suggestions from the very first interaction. By combining collaborative filtering techniques with modern machine learning ranking models, the system achieves significantly higher precision and recall compared to popularity-based or simple collaborative filtering approaches.
+
+The architecture demonstrates production-ready MLOps practices including containerization, CI/CD pipelines, comprehensive testing, and multiple deployment options. The system processes user events in real-time, maintains session state in Redis for sub-50ms latency, and uses a two-stage recommendation pipeline (candidate generation + LightGBM ranking) that scales efficiently to millions of products. This approach mirrors techniques used by major e-commerce platforms like Amazon and Alibaba, making it an excellent showcase of real-world recommendation system design. The project includes complete training pipelines, offline evaluation metrics (Recall@K, NDCG, MAP), and detailed deployment guides for cloud platforms, making it both a learning resource and a production-ready solution.
+
 **Key Features:**
 - ⚡ Real-time recommendations (<50ms P95 latency)
 - 🎯 Session-based collaborative filtering
@@ -465,14 +469,7 @@ docker compose logs -f redis
 
 MIT License - see LICENSE file for details
 
-## 👤 Author
-
-**Pavan Kalyan Reddy Madatala**
-
-- GitHub: [@Pavan-r-m](https://github.com/Pavan-r-m)
-- LinkedIn: [linkedin.com/in/pavankalyanrm](https://linkedin.com/in/pavankalyanrm)
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Dataset: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 - Inspiration: Real-world recommender systems at Netflix, Amazon, and Spotify
