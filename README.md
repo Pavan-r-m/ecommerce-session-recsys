@@ -1,6 +1,6 @@
 # E-Commerce Session-Based Recommender System
 
-[![CI/CD Pipeline](https://github.com/YOUR_USERNAME/ecommerce-session-recsys/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/YOUR_USERNAME/ecommerce-session-recsys/actions)
+[![CI/CD Pipeline](https://github.com/Pavan-r-m/ecommerce-session-recsys/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/Pavan-r-m/ecommerce-session-recsys/actions)
 
 A production-ready, real-time product recommendation system leveraging session-based collaborative filtering with LightGBM ranking. Built with FastAPI, Redis, and Docker for deployment on modern cloud platforms.
 
@@ -98,7 +98,7 @@ E-commerce platforms need real-time product recommendations that adapt to user b
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/ecommerce-session-recsys.git
+git clone https://github.com/Pavan-r-m/ecommerce-session-recsys.git
 cd ecommerce-session-recsys
 ```
 
@@ -469,8 +469,8 @@ MIT License - see LICENSE file for details
 
 **Pavan Kalyan Reddy Madatala**
 
-- GitHub: [@pavankalyanreddymadatala](https://github.com/pavankalyanreddymadatala)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/YOUR_PROFILE)
+- GitHub: [@Pavan-r-m](https://github.com/Pavan-r-m)
+- LinkedIn: [linkedin.com/in/pavankalyanrm](https://linkedin.com/in/pavankalyanrm)
 
 ## 🙏 Acknowledgments
 
