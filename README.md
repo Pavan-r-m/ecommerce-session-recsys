@@ -146,6 +146,8 @@ xychart-beta
     bar [420, 285, 210, 165, 125]
 ```
 
+## 🎮 [Try Live Demo](#-interactive-demo) | [Quick Start](#-quick-start-1)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -228,6 +230,70 @@ pytest tests/ --cov=src --cov-report=html
 
 # View coverage report
 open htmlcov/index.html
+```
+
+## 🎮 Interactive Demo
+
+Try the **live interactive demo** to see the recommendation system in action!
+
+### Option 1: Web-based Demo (Streamlit)
+
+```bash
+# Install Streamlit
+pip install streamlit
+
+# Start the API
+docker compose up -d
+
+# Run the demo
+streamlit run demo_app.py
+```
+
+The demo will open in your browser at `http://localhost:8501`
+
+**Features:**
+- 🛒 Browse sample products
+- 👁️ Simulate user interactions (view, click, add-to-cart)
+- ⭐ Get real-time recommendations
+- 📊 View session analytics
+- 📈 See recommendation scores visualized
+
+### Option 2: API Playground (Swagger UI)
+
+Interactive API documentation with live testing:
+
+```bash
+# Start services
+docker compose up
+
+# Open in browser
+open http://localhost:8000/docs
+```
+
+**Try these endpoints:**
+1. `POST /event` - Track user events
+2. `POST /recommend` - Get recommendations
+3. `GET /session/{session_id}` - View session state
+
+### Option 3: CLI Demo
+
+```bash
+# Track events
+curl -X POST http://localhost:8000/event \
+  -H "Content-Type: application/json" \
+  -d '{
+    "session_id": "demo_123",
+    "item_id": "prod_456",
+    "event_type": "view"
+  }'
+
+# Get recommendations
+curl -X POST http://localhost:8000/recommend \
+  -H "Content-Type: application/json" \
+  -d '{
+    "session_id": "demo_123",
+    "k": 10
+  }'
 ```
 
 ## 📦 API Endpoints

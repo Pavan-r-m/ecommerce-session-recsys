@@ -27,3 +27,4 @@ pytest-cov==4.1.0
 httpx==0.26.0
 ruff==0.1.14
 black==24.1.1
+streamlit==1.31.0
