@@ -1,4 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+
+# DuckDB databases (keep schema in git, not data)
+*.duckdb
+*.duckdb.wal
+
+# Model artifacts (use S3/releases instead)
+src/artifacts/*.pkl
+src/artifacts/*.parquet
+src/artifacts/*.json
+src/artifacts/*.joblib
+!src/artifacts/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# dbt
 target/
 dbt_packages/
-logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Redis dumps
+dump.rdb
