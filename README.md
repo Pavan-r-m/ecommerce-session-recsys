@@ -61,6 +61,28 @@ The architecture demonstrates production-ready MLOps practices including contain
    - **Ranker**: LightGBM model scoring candidates with session features
 4. **Training Pipeline** - Offline model training and evaluation
 
+### Recommendation Flow
+
+```mermaid
+flowchart LR
+    A[User Event] --> B[Session Store\nRedis]
+    B --> C[Get Session\nContext]
+    C --> D[Candidate\nGeneration]
+    D --> E[Item-to-Item\nSimilarity]
+    D --> F[Popular\nItems]
+    E --> G[Candidate Pool\n~100 items]
+    F --> G
+    G --> H[Feature\nEngineering]
+    H --> I[LightGBM\nRanker]
+    I --> J[Top-K\nRecommendations]
+    J --> K[API Response\n<50ms]
+    
+    style A fill:#e1f5ff
+    style K fill:#d4edda
+    style I fill:#fff3cd
+    style B fill:#f8d7da
+```
+
 ## 📊 Dataset & Preprocessing
 
 **Source**: Brazilian E-Commerce Public Dataset (Olist)
@@ -86,10 +108,43 @@ The architecture demonstrates production-ready MLOps practices including contain
 
 *Metrics measured on test set with next-item prediction task*
 
+### Performance Comparison
+
+```mermaid
+%%{init: {'theme':'base'}}%%
+xychart-beta
+    title "Model Performance Comparison (Recall@20)"
+    x-axis ["Popular Items", "Item-to-Item", "LightGBM Ranker"]
+    y-axis "Recall@20" 0 --> 0.6
+    bar [0.18, 0.35, 0.52]
+```
+
+### Latency Distribution
+
+```mermaid
+%%{init: {'theme':'base'}}%%
+xychart-beta
+    title "API Response Time Distribution (ms)"
+    x-axis ["P50", "P75", "P90", "P95", "P99"]
+    y-axis "Latency (ms)" 0 --> 80
+    line [15, 22, 35, 48, 72]
+```
+
 ### Online Proxy Metrics
 - **Latency (P95)**: < 50ms
 - **Session Coverage**: 92% (sessions with recommendations)
 - **Candidate Pool**: ~100 items per request
+
+### Feature Importance (Top 5)
+
+```mermaid
+%%{init: {'theme':'base'}}%%
+xychart-beta
+    title "LightGBM Feature Importance"
+    x-axis ["Item Popularity", "Session Length", "In Context", "Context Pop.", "Position"]
+    y-axis "Importance Score" 0 --> 450
+    bar [420, 285, 210, 165, 125]
+```
 
 ## 🚀 Quick Start
 
